@@ -1,0 +1,59 @@
+<header class="header">
+  <div class="container header__bar">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand__mark">🌶</span>
+      <span class="brand__text">
+        <strong>El Nopal Dorado</strong>
+        <small>Cocina mexicana de raíz</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-controls="primary-nav">
+      <span class="sr-only">Abrir menú de navegación</span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav id="primary-nav" class="nav" [class.nav--open]="menuOpen()">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/galeria" routerLinkActive="is-active" (click)="closeMenu()">Galería</a>
+      <a routerLink="/ubicaciones" routerLinkActive="is-active" (click)="closeMenu()">Ubicaciones</a>
+      <a routerLink="/nosotros" routerLinkActive="is-active" (click)="closeMenu()">Nosotros</a>
+      <a routerLink="/menu" routerLinkActive="is-active" class="nav__cta" (click)="closeMenu()">Menú</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="brand brand--footer">
+        <span class="brand__mark">🌶</span>
+        <strong>El Nopal Dorado</strong>
+      </div>
+      <p>Sabores de México hechos con maíz nixtamalizado, recetas de familia y mucho cariño desde 2008.</p>
+    </div>
+    <div>
+      <h3>Explora</h3>
+      <ul class="footer__links">
+        <li><a routerLink="/galeria">Galería</a></li>
+        <li><a routerLink="/ubicaciones">Ubicaciones</a></li>
+        <li><a routerLink="/nosotros">Misión y visión</a></li>
+        <li><a routerLink="/menu">Menú digital</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>hola&#64;elnopaldorado.mx<br>+52 55 5512 3344</p>
+      <p class="footer__note">Escanea el código QR en tu mesa para ver el menú del día.</p>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>&copy; {{ year }} El Nopal Dorado. Todos los derechos reservados.</span>
+  </div>
+</footer>

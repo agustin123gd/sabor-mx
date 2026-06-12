@@ -1,0 +1,110 @@
+.menu-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.menu-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.menu-hero__qr {
+  display: flex;
+  justify-content: center;
+}
+.menu-hero__qr-card {
+  background: var(--color-paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+  text-align: center;
+}
+.menu-hero__qr-card img {
+  border-radius: 8px;
+  margin: 0 auto;
+}
+.menu-hero__qr-caption {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-utility);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-soft);
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.menu-tabs__btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 100px;
+  border: 2px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.menu-tabs__btn:hover { background: rgba(43,33,24,0.06); }
+.menu-tabs__btn.is-active {
+  background: var(--color-ink);
+  color: #fff;
+}
+.menu-tabs__btn:focus-visible {
+  outline: 3px solid var(--color-talavera);
+  outline-offset: 2px;
+}
+
+.menu-category__head {
+  margin-bottom: 1.6rem;
+}
+.menu-category__head h2 { margin-bottom: 0.2rem; }
+.menu-category__head p { margin: 0; }
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu-list__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.2rem 0;
+  border-bottom: 1px dashed rgba(43,33,24,0.18);
+}
+.menu-list__item:first-child { padding-top: 0; }
+.menu-list__item:last-child { border-bottom: none; }
+.menu-list__main h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.menu-list__main p { margin: 0; font-size: 0.92rem; max-width: 540px; }
+.menu-list__tag { font-size: 0.6rem; }
+.menu-list__price {
+  font-family: var(--font-utility);
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  color: var(--color-chile);
+}
+
+@media (max-width: 900px) {
+  .menu-hero { grid-template-columns: 1fr; }
+  .menu-hero__qr { order: -1; }
+  .menu-list__item { flex-direction: column; gap: 0.4rem; }
+  .menu-list__price { font-size: 1rem; }
+}

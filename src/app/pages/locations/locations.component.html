@@ -1,0 +1,40 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Ubicaciones</span>
+    <h1>Tres casas, una misma cocina</h1>
+    <p class="page-hero__lead">
+      Visítanos en cualquiera de nuestras sucursales en la Ciudad de México.
+      Todas comparten el mismo menú y la misma calidez, con un toque propio
+      de su barrio.
+    </p>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-nopal)"></app-papel-picado>
+
+<section class="section">
+  <div class="container locations">
+    @for (loc of locations; track loc.id) {
+      <article class="location-card">
+        <div class="location-card__map">
+          <iframe
+            [src]="loc.mapUrl"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            [title]="'Mapa de ' + loc.name"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="location-card__body">
+          <span class="tag">{{ loc.neighborhood }}</span>
+          <h3>{{ loc.name }}</h3>
+          <ul class="location-card__details">
+            <li>📍 {{ loc.address }}</li>
+            <li>📞 {{ loc.phone }}</li>
+            <li>🕒 {{ loc.hours }}</li>
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>

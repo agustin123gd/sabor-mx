@@ -1,0 +1,40 @@
+.locations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+.location-card {
+  background: var(--color-paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.location-card__map {
+  height: 200px;
+  background: var(--color-bg-alt);
+}
+.location-card__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.location-card__body {
+  padding: 1.4rem 1.5rem 1.6rem;
+}
+.location-card__body h3 { margin-top: 0.5rem; }
+.location-card__details {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 980px) {
+  .locations { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,73 @@
+<section class="page-hero">
+  <div class="container menu-hero">
+    <div>
+      <span class="eyebrow">Menú digital</span>
+      <h1>Lo que se cocina hoy</h1>
+      <p class="page-hero__lead">
+        Precios en pesos mexicanos (MXN), incluyen impuestos. Algunos platillos pueden
+        variar según temporada y disponibilidad de ingredientes locales.
+      </p>
+      <div class="menu-hero__actions">
+        <a href="/assets/menu.pdf" target="_blank" rel="noopener" class="btn btn--primary" download="menu-el-nopal-dorado.pdf">
+          ⬇ Descargar menú en PDF
+        </a>
+        <a href="/assets/menu.pdf" target="_blank" rel="noopener" class="btn btn--ghost">
+          Abrir versión imprimible
+        </a>
+      </div>
+    </div>
+    <div class="menu-hero__qr">
+      <div class="menu-hero__qr-card">
+        <img [src]="qrUrl" alt="Código QR que enlaza a este menú digital" width="160" height="160">
+        <p class="menu-hero__qr-caption">Escanea para abrir este menú en tu celular</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-chile)"></app-papel-picado>
+
+<section class="section">
+  <div class="container">
+    <div class="menu-tabs" role="tablist" aria-label="Categorías del menú">
+      @for (cat of categories; track cat.id) {
+        <button
+          type="button"
+          role="tab"
+          class="menu-tabs__btn"
+          [class.is-active]="isActive(cat.id)"
+          [attr.aria-selected]="isActive(cat.id)"
+          (click)="setCategory(cat.id)">
+          {{ cat.title }}
+        </button>
+      }
+    </div>
+
+    @for (cat of categories; track cat.id) {
+      @if (isActive(cat.id)) {
+        <div class="menu-category">
+          <div class="menu-category__head">
+            <h2>{{ cat.title }}</h2>
+            <p>{{ cat.subtitle }}</p>
+          </div>
+          <ul class="menu-list">
+            @for (item of cat.items; track item.name) {
+              <li class="menu-list__item">
+                <div class="menu-list__main">
+                  <h3>
+                    {{ item.name }}
+                    @if (item.tag) {
+                      <span class="tag menu-list__tag">{{ item.tag }}</span>
+                    }
+                  </h3>
+                  <p>{{ item.description }}</p>
+                </div>
+                <div class="menu-list__price">{{ formatPrice(item.price) }}</div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    }
+  </div>
+</section>

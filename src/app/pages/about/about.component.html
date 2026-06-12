@@ -1,0 +1,66 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Nosotros</span>
+    <h1>De la milpa a tu mesa</h1>
+    <p class="page-hero__lead">
+      El Nopal Dorado nació en 2008 como un puesto familiar de tres mesas en el Centro
+      Histórico. Hoy seguimos cocinando con la misma receta de siempre: ingredientes
+      honestos, técnica tradicional y mucho cariño.
+    </p>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-chile)"></app-papel-picado>
+
+<section class="section">
+  <div class="container mv-page">
+    <article class="mv-page__card mv-page__card--mission">
+      <span class="tag">Misión</span>
+      <h2>Por qué cocinamos</h2>
+      <p>
+        Compartir la riqueza y diversidad de la cocina mexicana tradicional, platillo
+        por platillo, usando ingredientes locales, técnicas heredadas de nuestras
+        abuelas y un servicio cálido que haga sentir a cada persona como en casa.
+      </p>
+    </article>
+    <article class="mv-page__card mv-page__card--vision">
+      <span class="tag">Visión</span>
+      <h2>A dónde vamos</h2>
+      <p>
+        Ser el restaurante de referencia para quienes buscan cocina mexicana auténtica
+        en la Ciudad de México, expandiendo nuestras casas a más barrios sin perder
+        la receta, el trato familiar ni el origen de nuestros ingredientes.
+      </p>
+    </article>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-marigold)"></app-papel-picado>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Lo que nos guía</span>
+      <h2>Nuestros valores en la cocina</h2>
+    </div>
+    <div class="values">
+      @for (value of values; track value.title) {
+        <article class="values__item">
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--cta">
+  <div class="container section--cta__inner">
+    <h2>¿Listo para probarlo?</h2>
+    <p>Revisa nuestro menú digital o encuentra la sucursal más cercana a ti.</p>
+    <div class="hero__actions">
+      <a routerLink="/menu" class="btn btn--primary">Ver el menú</a>
+      <a routerLink="/ubicaciones" class="btn btn--ghost">Ver ubicaciones</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Galería</span>
+    <h1>Antojos que cuentan historias</h1>
+    <p class="page-hero__lead">
+      Un vistazo a nuestros platillos, bebidas y rincones favoritos de El Nopal Dorado.
+      Cada foto es tal cual sale de la cocina, sin retoques de más.
+    </p>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-marigold)"></app-papel-picado>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid">
+      @for (photo of photos; track photo.src) {
+        <figure class="gallery-grid__item">
+          <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+          <figcaption>{{ photo.caption }}</figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>

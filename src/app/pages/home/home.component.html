@@ -1,0 +1,92 @@
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow">Cocina mexicana de raíz · Desde 2008</span>
+      <h1>Sabor de mercado, <em>alma de casa</em>.</h1>
+      <p>
+        En El Nopal Dorado preparamos cada platillo como en la cocina de la abuela:
+        maíz nixtamalizado, salsas molidas en metate y recetas que viajan de generación
+        en generación. Tres casas en la Ciudad de México, una sola tradición.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/menu" class="btn btn--primary">Ver el menú</a>
+        <a routerLink="/ubicaciones" class="btn btn--ghost">Encuentra tu sucursal</a>
+      </div>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=900&q=80" alt="">
+      <div class="hero__chip hero__chip--top">🌮 Hechos al momento</div>
+      <div class="hero__chip hero__chip--bottom">📍 {{ locationsCount }} sucursales en CDMX</div>
+    </div>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-marigold)"></app-papel-picado>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Lo que se cuece en casa</span>
+      <h2>Una probadita de la galería</h2>
+    </div>
+    <div class="highlights">
+      @for (item of highlights; track item.src) {
+        <figure class="highlights__item">
+          <img [src]="item.src" [alt]="item.alt" loading="lazy">
+          <figcaption>{{ item.caption }}</figcaption>
+        </figure>
+      }
+    </div>
+    <div class="section__cta">
+      <a routerLink="/galeria" class="btn btn--ghost">Ver galería completa</a>
+    </div>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-nopal)"></app-papel-picado>
+
+<section class="section section--alt">
+  <div class="container mv">
+    <article class="mv__card">
+      <span class="tag">Misión</span>
+      <h3>Por qué cocinamos</h3>
+      <p>
+        Compartir la riqueza de la cocina mexicana tradicional en cada platillo,
+        usando ingredientes locales y técnicas ancestrales, para que cada visita
+        se sienta como una comida familiar.
+      </p>
+    </article>
+    <article class="mv__card">
+      <span class="tag">Visión</span>
+      <h3>A dónde vamos</h3>
+      <p>
+        Ser el restaurante de referencia de cocina mexicana en la Ciudad de México,
+        reconocido por preservar recetas tradicionales y llevar nuestra cultura
+        a nuevas generaciones y visitantes de todo el mundo.
+      </p>
+    </article>
+    <div class="mv__cta">
+      <a routerLink="/nosotros" class="btn btn--primary">Conoce nuestra historia</a>
+    </div>
+  </div>
+</section>
+
+<app-papel-picado color="var(--color-talavera)"></app-papel-picado>
+
+<section class="section">
+  <div class="container qr-band">
+    <div class="qr-band__copy">
+      <span class="eyebrow">En tu mesa</span>
+      <h2>Pide sin esperar: escanea y explora el menú</h2>
+      <p>
+        Cada mesa tiene un código QR que te lleva directo a nuestro menú digital,
+        siempre actualizado con precios y disponibilidad del día. También puedes
+        descargarlo en PDF para llevarlo contigo.
+      </p>
+      <a routerLink="/menu" class="btn btn--primary">Ir al menú digital</a>
+    </div>
+    <div class="qr-band__visual" aria-hidden="true">
+      <div class="qr-band__frame">📱</div>
+    </div>
+  </div>
+</section>
